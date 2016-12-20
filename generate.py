@@ -4,6 +4,7 @@ import json
 import os
 import sys
 from jinja2 import Template, Environment, FileSystemLoader
+from shutil import copyfile
 
 config = {}
 
@@ -39,6 +40,7 @@ def generate_dir(inpath, outpath):
         else:
             # plain boring old file, copy it 
             print ('Copying file "%s"' % full_path)
+            copyfile(full_path, outpath + '/' + thing)
             pass
 
 if __name__ == '__main__':
