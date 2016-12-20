@@ -10,8 +10,11 @@
 			<label for="date">Date</label>
 			<input type="text" id="datepicker">
 			<br>
-			<label for="date">Time</label>
-			<input type="text" id="timepicker">
+			<label for="date">Hour (0-23)</label>
+			<input type="number" id="hour">
+			<br>
+			<label for="date">Minute (0-59)</label>
+			<input type="number" id="minute">
 			<br>
 			<input type="text" name="date" id="date" value="-1">
 			<label for="mmol">Blood Glucose (in mmol/L)</label>
@@ -25,19 +28,27 @@
 			<br>
 			<input type="submit" value="Submit">
 		</form>
+		<script src="{{ momentjs_url }}/moment.js"></script>
 		<script src="{{ pikaday_url }}/pikaday.js"></script>
 		<script>
 			const today = new Date();
+			const hourInput = document.getElementById('hour');
+			hourInput.setAttribute('value', moment().format('hh'));
+			const minuteInput = document.getElementById('minute');
+			minuteInput.setAttribute('value', moment().format('mm'));
+			const dateInput = document.getElementById('datepicker');
+			dateInput.setAttribute('value', moment().format('YYYY-MM-DD'));
 			var picker = new Pikaday({
-				field: document.getElementById('datepicker'),
+				format: "YYYY-MM-DD",
+				defaultDate: moment().format("YYYY-MM-DD"),
+				field: dateInput,
 				onSelect: function() {
+					console.log(this.getMoment());
 					const datePicker = document.getElementById('datepicker');
 					const date = datePicker.value;
-					const timePicker = document.getElementById('timepicker');
-					const time = timePicker.value;
 					var fullDate = document.getElementById('date');
-					fullDate.value = date + " " + time;
-				}
+					fullDate.value = date + " " + hourInput.value + ":" + minuteInput.value;
+				},
 			});
 		</script>
 	</body>
