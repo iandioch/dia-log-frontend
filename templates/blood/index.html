@@ -2,6 +2,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>dia-log</title>
+		<link rel="stylesheet" href="{{pikaday_url}}/css/pikaday.css">
 	</head>
 	<body>
 		<p>Add blood sugar boyo</p>
@@ -20,7 +21,7 @@
 			<br>
 			<input type="submit" value="Submit">
 		</form>
-		<script src="{{ site_url }}/depends/pikaday/Pikaday/pikaday.js"></script>
+		<script src="{{ pikaday_url }}/pikaday.js"></script>
 		<script>
 			var picker = new Pikaday({
 				field: document.getElementById('datepicker')
