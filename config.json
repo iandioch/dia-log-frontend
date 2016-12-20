@@ -3,5 +3,5 @@
   "api_url": "http://dialog-api.blurry.video",
   "site_url": "http://dialog.blurry.video",
   "output_dir": "out",
-  "pikaday_url": "http://dialog.blurry.video/depends/pikada/Pikaday"
+  "pikaday_url": "http://dialog.blurry.video/depends/pikaday/Pikaday"
 }
