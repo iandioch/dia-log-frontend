@@ -36,20 +36,28 @@
 			hourInput.setAttribute('value', moment().format('hh'));
 			const minuteInput = document.getElementById('minute');
 			minuteInput.setAttribute('value', moment().format('mm'));
-			const dateInput = document.getElementById('datepicker');
-			dateInput.setAttribute('value', moment().format('YYYY-MM-DD'));
+			const datePicker = document.getElementById('datepicker');
+			datePicker.setAttribute('value', moment().format('YYYY-MM-DD'));
+			const dateInput = document.getElementById('date');
+
+			function updateDateField() {
+				const date = moment(datePicker.value).hour(hourInput.value).minute(minuteInput.value);
+				const dateString = date.format(); // iso 8601
+				dateInput.value = dateString;
+			}
+
+			updateDateField();
 			var picker = new Pikaday({
 				format: "YYYY-MM-DD",
 				defaultDate: moment().format("YYYY-MM-DD"),
-				field: dateInput,
+				field: datePicker,
 				onSelect: function() {
 					console.log(this.getMoment());
-					const datePicker = document.getElementById('datepicker');
-					const date = datePicker.value;
-					var fullDate = document.getElementById('date');
-					fullDate.value = date + " " + hourInput.value + ":" + minuteInput.value;
+					updateDateField();
 				},
 			});
+
+			document.addEventListener('input', updateDateField);
 		</script>
 	</body>
 </html>
