@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>dia-log</title>
+	</head>
+	<body>
+		<p>Add blood sugar boyo</p>
+		<form name="add_blood" method="post" action="{{ api_url }}/blood/add/">
+			<label for="date">Date + Time</label>
+			<input type="text" id="datepicker">
+			<br>
+			<label for="mmol">Blood Glucose (in mmol/L)</label>
+			<input type="text" name="mmol" size="6">
+			<br>
+			<label for="user">Username</label>
+			<input type="text" name="user" size="32">
+			<br>
+			<label for="pass">Password</label>
+			<input type="password" name="pass" size="32">
+			<br>
+			<input type="submit" value="Submit">
+		</form>
+		<script src="{{ site_url }}/depends/pikaday/pikaday.js"></script>
+		<script>
+			var picker = new Pikaday({
+				field: document.getElementById('datepicker')
+			});
+		</script>
+	</body>
+</html>
