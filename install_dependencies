@@ -3,4 +3,9 @@
 mkdir -p templates/depends/
 cd templates/depends
 git clone git@github.com:dbushell/Pikaday
+mkdir momentjs
+cd momentjs
+wget http://momentjs.com/downloads/moment.js
+cd ..
+
 cd ../..

@@ -3,5 +3,6 @@
   "api_url": "http://dialog.blurry.video/api/",
   "site_url": "http://dialog.blurry.video",
   "output_dir": "out",
-  "pikaday_url": "http://dialog.blurry.video/depends/Pikaday"
+  "pikaday_url": "http://dialog.blurry.video/depends/Pikaday",
+  "momentjs_url": "http://dialog.blurry.video/depends/momentjs"
 }
