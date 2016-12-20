@@ -33,9 +33,9 @@
 		<script>
 			const today = new Date();
 			const hourInput = document.getElementById('hour');
-			hourInput.setAttribute('value', moment().format('hh'));
+			hourInput.setAttribute('value', moment().hour());
 			const minuteInput = document.getElementById('minute');
-			minuteInput.setAttribute('value', moment().format('mm'));
+			minuteInput.setAttribute('value', moment().minute());
 			const datePicker = document.getElementById('datepicker');
 			datePicker.setAttribute('value', moment().format('YYYY-MM-DD'));
 			const dateInput = document.getElementById('date');
