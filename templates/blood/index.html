@@ -7,9 +7,13 @@
 	<body>
 		<p>Add blood sugar boyo</p>
 		<form name="add_blood" method="post" action="{{ api_url }}/blood/add/">
-			<label for="date">Date + Time</label>
+			<label for="date">Date</label>
 			<input type="text" id="datepicker">
 			<br>
+			<label for="date">Time</label>
+			<input type="text" id="timepicker">
+			<br>
+			<input type="text" name="date" id="date" value="-1">
 			<label for="mmol">Blood Glucose (in mmol/L)</label>
 			<input type="text" name="mmol" size="6">
 			<br>
@@ -23,8 +27,17 @@
 		</form>
 		<script src="{{ pikaday_url }}/pikaday.js"></script>
 		<script>
+			const today = new Date();
 			var picker = new Pikaday({
-				field: document.getElementById('datepicker')
+				field: document.getElementById('datepicker'),
+				onSelect: function() {
+					const datePicker = document.getElementById('datepicker');
+					const date = datePicker.value;
+					const timePicker = document.getElementById('timepicker');
+					const time = timePicker.value;
+					var fullDate = document.getElementById('date');
+					fullDate.value = date + " " + time;
+				}
 			});
 		</script>
 	</body>
