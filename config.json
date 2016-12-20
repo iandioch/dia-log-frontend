@@ -1,6 +1,6 @@
 {
   "template_dir": "templates",
-  "api_url": "http://dialog-api.blurry.video",
+  "api_url": "http://dialog.blurry.video/api/",
   "site_url": "http://dialog.blurry.video",
   "output_dir": "out",
   "pikaday_url": "http://dialog.blurry.video/depends/Pikaday"
