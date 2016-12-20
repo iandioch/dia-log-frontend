@@ -1,0 +1,5 @@
+{
+  "template_dir": "templates",
+  "api_url": "http://dialog.blurry.video",
+  "output_dir": "out"
+}
